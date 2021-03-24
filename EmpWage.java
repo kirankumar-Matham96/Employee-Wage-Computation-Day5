@@ -8,10 +8,12 @@ public class EmpWage
 		int fullTimeWorkingHrs = 8;
 		int partTimeWorkingHrs = 4;
 		int workingDaysInMonth = 20;
+		int maxWorkingHrs = 100;
 		int dayOfMonth = 0;
 		int empDailyWage = 0;
 		int empMonthlyWage = 0;
-		while(dayOfMonth < workingDaysInMonth)
+		int totalWorkingHrs = 0;
+		while(dayOfMonth < workingDaysInMonth || totalWorkingHrs < maxWorkingHrs)
 		{
 			int checkPresence = (int) (Math.random()*10%2);
 			int checkWorkingTime = (int) (Math.random()*10%2);
@@ -22,9 +24,11 @@ public class EmpWage
 					{
 						case isFullTime:
 							empDailyWage = fullTimeWorkingHrs * wagePerHr;
+							totalWorkingHrs += fullTimeWorkingHrs;
 							break;
 						default:
 							empDailyWage = partTimeWorkingHrs * wagePerHr;
+							totalWorkingHrs += partTimeWorkingHrs;
 					}
 					empMonthlyWage += empDailyWage;
 					break;
