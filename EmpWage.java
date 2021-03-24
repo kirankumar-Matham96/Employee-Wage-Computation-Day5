@@ -7,23 +7,22 @@ public class EmpWage
 
 	//Checking employee attendance
 	public static int empPresence()
-	{System.out.println("empPresence");
+	{
 		checkPresence = (int) (Math.random()*10%2);
 		return checkPresence;
 	}
 
 	//Checking employee working time
 	public static int empType() //Type: Full_time/Part_time
-	{System.out.println("empType");
+	{
 		checkWorkingTime = (int) (Math.random()*10%2);
 		return checkWorkingTime;
 	}
 
 	//wage calculation
 	public static int empWage(int WorkingHrs)
-	{System.out.println("empWage");
+	{
 		empDailyWage = WorkingHrs * wagePerHr;
-System.out.println("empDailyWage: "+empDailyWage);
 		return empDailyWage;
 	}
 
