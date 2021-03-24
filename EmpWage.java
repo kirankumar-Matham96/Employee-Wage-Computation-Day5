@@ -13,7 +13,7 @@ public class EmpWage
 		int empDailyWage = 0;
 		int empMonthlyWage = 0;
 		int totalWorkingHrs = 0;
-		while(dayOfMonth < workingDaysInMonth || totalWorkingHrs < maxWorkingHrs)
+		while(dayOfMonth < workingDaysInMonth && totalWorkingHrs < maxWorkingHrs)
 		{
 			int checkPresence = (int) (Math.random()*10%2);
 			int checkWorkingTime = (int) (Math.random()*10%2);
