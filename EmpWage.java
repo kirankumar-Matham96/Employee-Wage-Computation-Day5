@@ -7,27 +7,31 @@ public class EmpWage
 		int wagePerHr = 20;
 		int fullTimeWorkingHrs = 8;
 		int partTimeWorkingHrs = 4;
-		int empWage = 0;
-		int checkPresence = (int) (Math.random()*10%2);
-		int checkWorkingTime = (int) (Math.random()*10%2);
-		switch(checkPresence)
+		int workingDaysInMonth = 20;
+		int dayOfMonth = 0;
+		int empDailyWage = 0;
+		int empMonthlyWage = 0;
+		while(dayOfMonth < workingDaysInMonth)
 		{
-			case isPresent:
-				System.out.println("Employee is present");
-				switch(checkWorkingTime)
-				{
-					case isFullTime:
-						System.out.println("Employee is full timer");
-						empWage = fullTimeWorkingHrs * wagePerHr;
-						break;
-					default:
-						System.out.println("Employee is part timer");
-						empWage = partTimeWorkingHrs * wagePerHr;
-				}
-				break;
-			default:
-				System.out.println("Employee is absent");
+			int checkPresence = (int) (Math.random()*10%2);
+			int checkWorkingTime = (int) (Math.random()*10%2);
+			switch(checkPresence)
+			{
+				case isPresent:
+					switch(checkWorkingTime)
+					{
+						case isFullTime:
+							empDailyWage = fullTimeWorkingHrs * wagePerHr;
+							break;
+						default:
+							empDailyWage = partTimeWorkingHrs * wagePerHr;
+					}
+					empMonthlyWage += empDailyWage;
+					break;
+				default:
+			}
+			dayOfMonth++;
 		}
-		System.out.println("Employee Wage is: "+empWage);
+		System.out.println("Employee monthly wage is: "+empMonthlyWage);
 	}
 }
